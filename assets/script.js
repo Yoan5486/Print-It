@@ -31,42 +31,32 @@ console.log(balisearrow_right)
 
 
 
-let balisetxtimage = document.querySelector("#banner p");
+console.log(balisearrow_right)
+
+console.log (balisearrow_left)
+
+
+let banner_tagline = document.querySelector("#banner p");
 
 let baliseimage = document.querySelector(".banner-img");
 
-
-balisearrow_right.addEventListener ("click", () => {
-
-		for (let a = 0; a < slides.length; a++) {
-
-			let baliseimage = slides[1];
-			baliseimage.src = "assets/images/slideshow/slide2.jpg"
-			balisetxtimage.innerHTML --- 'Tirages haute définition grand format <span>pour vos bureaux et events</span>';
-
-		} 
-		baliseimage.src = "assets/images/slideshow/slide2.jpg";
-		
-	
-	
-});
+let dot_selected = document.querySelector(".dot_selected");
 
 let dots_container = document.querySelector(".dots");
 
+console.log(baliseimage)
 
 for (let i = 0; i < slides.length; i++) {
 	 
 	dots_container.innerHTML += '<div class="dot"></div>'
 
-}
+	balisearrow_right.addEventListener ("click", () => {
+		baliseimage.forEach((img, i) => {
+			img.src = "./assets/images/slideshow" + slides[index].image;
+			console.log(img.src)
+		});
 
-console.log(baliseimage)
-
-console.log(balisearrow_right)
-
-console.log(balisearrow_right)
-
-console.log (balisearrow_left)
-
-/*baliseimage.src = "assets/images/slideshow/slide3.jpg";
-	baliseimage.src = "assets/images/slideshow/slide4.jpg";*/
+		banner_tagline.innerHTML = slides[index].image = tagLine;
+	
+})
+};
