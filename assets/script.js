@@ -23,7 +23,6 @@ console.log(baliseArrowLeft)
 let baliseArrowRight = document.querySelector(".arrow_right");
 console.log(baliseArrowRight)
 
-
 let baliseImage = document.querySelector(".banner-img");
 
 let bannerTagLine = document.querySelector("#banner p");
@@ -31,38 +30,41 @@ let bannerTagLine = document.querySelector("#banner p");
 let dotSelected = document.querySelector(".dot_selected");
 
 let currentSlide = 0;
-let 
-
 
 function updateSlides() {
 	baliseImage.src = slides[currentSlide].image;
 	bannerTagLine.innerHTML = slides[currentSlide].tagLine
-	
 }
 
+
 baliseArrowLeft.addEventListener("click", () => {
-	currentSlide--
+	currentSlide += 4
+	currentSlide --
 	console.log(baliseArrowLeft)
 	updateSlides ();
+	if (currentSlide == 0) {
+		currentSlide = 4	
+	}
+	else {
 	
-		
+	};	
+	console.log(currentSlide)
 });
 
 baliseArrowRight.addEventListener ("click", () => {
 	currentSlide++
 	updateSlides ();
-		
-	});
-
+	if (currentSlide >= 3) {
+		currentSlide = -1	
+	}
+	else {
+	
+	};
+});
 
 console.log (baliseArrowLeft)
 
-
-
 let dotsContainer = document.querySelector(".dots");
-
-
-
 
 for (let i = 0; i < slides.length; i++) {
 	 
