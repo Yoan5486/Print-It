@@ -38,7 +38,6 @@ function updateSlides() {
 
 
 baliseArrowLeft.addEventListener("click", () => {
-	currentSlide += 4
 	currentSlide --
 	console.log(baliseArrowLeft)
 	updateSlides ();
