@@ -27,8 +27,6 @@ let baliseImage = document.querySelector(".banner-img");
 
 let bannerTagLine = document.querySelector("#banner p");
 
-let dotSelected = document.querySelector(".dot_selected");
-
 let currentSlide = 0;
 
 function updateSlides() {
@@ -40,34 +38,55 @@ function updateSlides() {
 baliseArrowLeft.addEventListener("click", () => {
 	currentSlide --
 	console.log(baliseArrowLeft)
-	updateSlides ();
-	if (currentSlide == 0) {
-		currentSlide = 4	
+	if (currentSlide == -1) {
+		currentSlide = 3	
 	}
 	else {
-	
+		
 	};	
+	updateSlides ();
 	console.log(currentSlide)
 });
 
 baliseArrowRight.addEventListener ("click", () => {
 	currentSlide++
-	updateSlides ();
-	if (currentSlide >= 3) {
-		currentSlide = -1	
+	if (currentSlide >= 4) {
+		currentSlide = 0
 	}
 	else {
 	
 	};
+	updateSlides ();
+	console.log(currentSlide)
 });
 
 console.log (baliseArrowLeft)
 
+let dotSelected = document.querySelector(".dots")
+
+function dotSelectedSlide() {
+	dotSelected.classList.add("dot_selected")
+}
+
+
+
+
+
 let dotsContainer = document.querySelector(".dots");
 
 for (let i = 0; i < slides.length; i++) {
-	 
-	dotsContainer.innerHTML += '<div class="dot"></div>';
+		dotsContainer.innerHTML += '<div class="dot"></div>';
+}
+if (i = currentSlide) {
+	dotsContainer.innerHTML += '<div class="dot dot_selected></div>';
+}
 
+else {
 	
 }
+
+/*for (let j = 0; currentSlide >= 0; j=currentSlide) {
+		dotsContainer.innerHTML += '<div class="dot dot_selected"></div>';
+}*/
+
+console.log(dotSelected); 
